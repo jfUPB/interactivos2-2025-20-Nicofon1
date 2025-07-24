@@ -116,14 +116,14 @@ inicialmente se generan todas las variables, despues dentro de  la funcion gener
 ____
 #### Explore
 ```js
-function drawConnections() {
+function generarRectas() {
   strokeWeight(0.5);
-  for ( i = 0; i < points.length; i++) {
-    for ( j = i + 1; j <= i + 20 && j < points.length; j++) {
+  for ( i = 0; i < puntos.length; i++) {
+    for ( j = i + 1; j <= i + 20 && j < puntos.length; j++) {
 
       if (arcoiris) {
        
-        let hue = map(i, 0, points.length, 0, 360);
+        let hue = map(i, 0, puntos.length, 0, 360);
         colorMode(HSB, 360, 100, 100, 100); 
         stroke(hue, 80, 100, 40); 
       } else {
@@ -131,7 +131,7 @@ function drawConnections() {
         stroke(0, 50);
       }
 
-      line(points[i].x, points[i].y, points[j].x, points[j].y);
+      line(puntos[i].x, puntos[i].y, puntos[j].x, puntos[j].y);
     }
   }
 }
@@ -141,3 +141,55 @@ function drawConnections() {
 
 
 ahora mapeo el hue a lo largo de la cantidad de puntos y se lo voy aplicando a cada recta, con eso consigo un efecto tipo arcoiris o algo por el estilo, y permito cambiarlo con la tecla c
+
+____
+#### Tinker
+
+[RESULTADO FINAL](https://editor.p5js.org/Nicofon1/sketches/aJX8smbNC)
+
+``` js 
+faseX = 15;
+faseY = 15;
+iX = 1;
+iY =1;
+move = false;
+
+
+
+  if (keyCode == LEFT_ARROW) {
+    if (move)iX--;
+    else faseX -= 15;
+  }
+  
+  if (keyCode == RIGHT_ARROW) {
+    if (move)iX++;
+    else faseX += 15;
+  }
+  if (keyCode == UP_ARROW) {
+    if (move)iY++;
+    else faseY += 15;
+  }
+    if (keyCode == DOWN_ARROW) {
+    if (move)iY--;
+    else faseY -= 15;
+  }
+  if (key === 'm')move = !move;
+
+
+
+function draw(){
+  if (move){
+    faseX+=iX;
+    faseY+=iY;
+  background(255);
+  generarPuntos();
+  generarRectas();
+    print(iX,iY);
+  }
+}
+```
+
+por ultimo  para intentar dar efecto rotacion en cada direccion activamos una variable move para cambiar entre estatico y movimiento, dsps una fase para x y otra para y, a su vez una intencidad para cada eje y las manejamos con las flechas y por ultimo en la funcion draw actualisamos cada fase acorde a cada intencidad 
+
+
+
