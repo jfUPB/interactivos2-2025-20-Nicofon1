@@ -18,7 +18,7 @@ El público no es espectador: es materia prima. A través de sus decisiones, su 
 **Input:**  
 - Cada celular del público activa su cámara trasera (previa autorización).  
 - El sistema obtiene en tiempo real un feed comprimido del punto de vista de cada persona.  
-- Los datos de posición de los celulares (ángulo, orientación y ubicación relativa en el domo) se obtienen vía sensores del teléfono (giroscopio, brújula) y conexión con una app base vía WebRTC + WebSockets.  
+- Los datos de posición de los celulares (ángulo, orientación y ubicación relativa en el domo) y conexión con una app base vía WebRTC + WebSockets.  
 
 **Process:**  
 - Se genera una superficie semitransparente tipo “domo de cristal” en la proyección, cubierta por gotas dinámicas.  
@@ -109,3 +109,4 @@ La interfaz es mínima, pero significativa: elegir, tocar, deslizar. Cada acció
 - **Artista:** dispara la experiencia con su música, presencia y ritmo.  
 - **Público:** moldea el contenido emocional del espacio, elige cómo participar, genera sus propios trazos e interacciones.  
 - **Sistema:** media entre ambos. Traduce música, elecciones y datos en visuales. A veces reacciona, a veces propone.  
+
