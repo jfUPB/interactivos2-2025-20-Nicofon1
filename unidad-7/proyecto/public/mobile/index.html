@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>CHIHIRO | Interacción</title>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #000;
+            font-family: 'Helvetica Neue', sans-serif;
+            color: white;
+            height: 100%;
+            width: 100%;
+        }
+
+        /* Contenedor principal que centrará todo */
+        #app-container {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        
+        /* Estilo para el texto de instrucción */
+        .instruction-text {
+            font-size: 18px;
+            font-weight: 200;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 50px; 
+            padding: 0 20px; 
+        }
+
+        /* Estilo para la elipse que se va a presionar */
+        .touch-ellipse {
+            width: 150px;
+            height: 150px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%; 
+            cursor: pointer;
+            transition: all 0.2s ease-out; 
+        }
+        
+        /* Estilo de la elipse cuando está siendo presionada */
+        .touch-ellipse.active {
+            transform: scale(1.1); 
+            background-color: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 0 30px rgba(255, 255, 255, 0.7);
+        }
+
+    </style>
+</head>
+<body>
+    <div id="app-container"></div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="mobile.js"></script>
+</body>
+</html>
